@@ -6,11 +6,9 @@
 
 <div class="bg-white p-6 rounded-xl shadow">
 
-    <!-- HEADER -->
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-lg font-semibold">Daftar Produk</h2>
 
-        <!-- SEARCH -->
         <form method="GET">
             <input type="text" name="search" value="{{ $search }}"
                 placeholder="Cari produk..."
@@ -18,7 +16,6 @@
         </form>
     </div>
 
-    <!-- TABLE -->
     <table class="w-full text-left">
         <thead>
             <tr class="text-gray-500 border-b">
@@ -58,7 +55,6 @@
         </tbody>
     </table>
 
-    <!-- PAGINATION -->
     @if($products->total() > 10)
     <div class="mt-6">
         {{ $products->links() }}

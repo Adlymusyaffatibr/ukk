@@ -52,7 +52,6 @@
 
 </div>
 
-{{-- TOAST --}}
 @if(session('success'))
 <div id="toast" class="fixed top-5 right-5 bg-green-500 text-white px-5 py-2 rounded shadow">
     {{ session('success') }}
@@ -66,7 +65,6 @@
 @endif
 
 
-{{-- MODAL ADD --}}
 <div id="addModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
 <div class="bg-white p-6 rounded w-96 relative">
 
@@ -96,7 +94,6 @@
 </div>
 
 
-{{-- MODAL EDIT --}}
 <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
 <div class="bg-white p-6 rounded w-96 relative">
 
@@ -127,7 +124,6 @@
 </div>
 
 
-{{-- MODAL DELETE --}}
 <div id="deleteModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
 <div class="bg-white p-6 rounded text-center w-80">
 
@@ -176,7 +172,6 @@ function submitDelete(){
     deleteForm.submit();
 }
 
-/* TOAST AUTO HILANG */
 setTimeout(()=>{
     let t=document.getElementById('toast');
     if(t) t.remove();

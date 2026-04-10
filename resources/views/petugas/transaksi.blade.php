@@ -33,13 +33,11 @@
             class="px-3 py-1 bg-gray-200 rounded">+</button>
     </div>
 
-    <!-- SUBTOTAL -->
     <p class="text-sm text-gray-600">
         Sub Total Rp.
         <span id="sub-{{ $p->id }}">0</span>
     </p>
 
-    <!-- HIDDEN INPUT -->
     <input type="hidden" name="items[{{ $p->id }}][id]" value="{{ $p->id }}">
     <input type="hidden" id="input-{{ $p->id }}" name="items[{{ $p->id }}][qty]" value="0">
 
@@ -48,14 +46,12 @@
 
 </div>
 
-<!-- TOTAL -->
 <div class="mt-8 text-right">
     <h2 class="text-xl font-bold">
         Total: Rp <span id="grandTotal">0</span>
     </h2>
 </div>
 
-<!-- BUTTON -->
 <div class="mt-6 text-center">
     <button class="bg-blue-600 text-white px-6 py-2 rounded">
         Selanjutnya

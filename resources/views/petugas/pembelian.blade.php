@@ -5,7 +5,6 @@
 
     <div class="bg-white p-6 rounded-xl shadow">
 
-        <!-- HEADER -->
         <div class="flex justify-between mb-4">
 
             <div class="flex gap-2">
@@ -66,7 +65,6 @@
 
     </div>
 
-    <!-- MODAL DETAIL -->
     <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
         <div class="bg-white p-6 rounded w-96 relative">
 
