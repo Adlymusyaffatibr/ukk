@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('change');
             $table->integer('points_used')->default(0);
             $table->integer('points_earned')->default(0);
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

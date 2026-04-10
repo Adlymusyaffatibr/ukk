@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class PetugasController extends Controller
 {
@@ -15,11 +16,11 @@ class PetugasController extends Controller
     {
         $search = $request->search;
 
-        $products = Produk::when($search, function ($query) use ($search) {
-            $query->where('name', 'like', '%'.$search.'%');
+        $products = Product::when($search, function ($query) use ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
         })
             ->latest()
-            ->paginate();
+            ->paginate(10);
 
         return view('petugas.produk', compact('products', 'search'));
     }

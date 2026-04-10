@@ -93,6 +93,7 @@ class PetugasPembelianController extends Controller
                 throw new \Exception('Total tidak valid');
             }
 
+            // MEMBER
             $pointsEarned = 0;
             $pointsUsed = 0;
 
@@ -104,9 +105,11 @@ class PetugasPembelianController extends Controller
 
                 $isFirst = Order::where('phone', $r->phone)->count() == 0;
 
+                // ambil total poin user sebelumnya
                 $totalPoints = Order::where('phone', $r->phone)->sum('points_earned')
                     - Order::where('phone', $r->phone)->sum('points_used');
 
+                // kalau user centang pakai poin
                 if (!$isFirst && $r->use_points == 1) {
                     $pointsUsed = min($totalPoints, floor($total * 0.01));
                     $total -= $pointsUsed;
