@@ -17,7 +17,7 @@
             <nav class="space-y-4">
                 <a href="/petugas/dashboard" class="block hover:bg-blue-700 p-2 rounded">Dashboard</a>
                 <a href="/petugas/produk" class="block hover:bg-blue-700 p-2 rounded">Produk</a>
-                <a href="/petugas/pembelian" class="block hover:bg-blue-700 p-2 rounded">Pembelian</a>
+                <a href="/petugas/pembelian" class="block hover:bg-blue-700 p-2 rounded">Penjualan</a>
             </nav>
         </div>
 

@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'store_address' => 'Jl. Raya Bogor No.123, Tajur, Bogor, Jawa Barat',
+
 ];

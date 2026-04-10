@@ -17,7 +17,7 @@
             <nav class="space-y-4">
                 <a href="/admin/dashboard" class="block hover:bg-blue-700 p-2 rounded">Dashboard</a>
                 <a href="/admin/produk" class="block hover:bg-blue-700 p-2 rounded">Produk</a>
-                <a href="/admin/pembelian" class="block hover:bg-blue-700 p-2 rounded">Pembelian</a>
+                <a href="/admin/pembelian" class="block hover:bg-blue-700 p-2 rounded">Penjualan</a>
                 <a href="/admin/user" class="block hover:bg-blue-700 p-2 rounded">User</a>
             </nav>
         </div>

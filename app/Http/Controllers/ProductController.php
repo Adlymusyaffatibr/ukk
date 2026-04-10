@@ -10,6 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::latest()->get();
+
         return view('admin.produk', compact('products'));
     }
 
@@ -19,8 +20,19 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
-            'image' => 'nullable|image'
+            'image' => 'nullable|image',
         ]);
+
+        $product = Product::where('name', $request->name)->first();
+
+        if ($product) {
+            $product->update([
+                'stock' => $product->stock + $request->stock,
+                'price' => $request->price, 
+            ]);
+
+            return redirect()->back()->with('success', 'Stok produk berhasil ditambahkan');
+        }
 
         $image = null;
         if ($request->file('image')) {
@@ -44,7 +56,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
-            'image' => 'nullable|image'
+            'image' => 'nullable|image',
         ]);
 
         if ($request->file('image')) {
@@ -62,17 +74,18 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::findOrFail($id)->delete();
+
         return redirect()->back()->with('error', 'Produk berhasil dihapus');
     }
 
     public function updateStock(Request $request, $id)
     {
         $request->validate([
-            'stock' => 'required|numeric|min:0'
+            'stock' => 'required|numeric|min:0',
         ]);
 
         Product::findOrFail($id)->update([
-            'stock' => $request->stock
+            'stock' => $request->stock,
         ]);
 
         return redirect()->back()->with('success', 'Stok berhasil diupdate');
