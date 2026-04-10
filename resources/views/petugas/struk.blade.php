@@ -13,7 +13,6 @@
 
     <hr class="my-3">
 
-    <!-- LIST PRODUK -->
     @foreach($order->details as $d)
     <div class="flex justify-between mb-2">
         <div>
@@ -27,7 +26,6 @@
 
     <hr class="my-3">
 
-    <!-- TOTAL -->
     <p class="flex justify-between">
         <span>Total</span>
         <span>Rp {{ number_format($order->total_price + $order->points_used,0,',','.') }}</span>
@@ -60,7 +58,6 @@
     <p><b>Poin Didapat:</b> {{ $order->points_earned }}</p>
     @endif
 
-    <!-- BUTTON -->
     <div class="flex gap-3 mt-6">
 
         <a href="/petugas/pembelian"
