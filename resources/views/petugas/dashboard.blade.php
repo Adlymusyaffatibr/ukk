@@ -10,4 +10,26 @@
         untuk menavigasi aplikasi
     </p>
 </div>
+
+<div class="bg-green-100 p-4 rounded mb-4">
+    <h2 class="text-lg font-semibold">Total Pemasukan</h2>
+    <p class="text-2xl font-bold">
+        Rp {{ number_format($totalPemasukan, 0, ',', '.') }}
+    </p>
+</div>
+
+<div class="bg-red-100 p-4 rounded">
+    <h2 class="text-lg font-semibold mb-2">Produk Perlu Restock</h2>
+
+    @forelse($produkRestock as $p)
+        <div class="flex justify-between border-b py-1">
+            <span>{{ $p->name }}</span>
+            <span class="text-red-600">Stok: {{ $p->stock }}</span>
+        </div>
+    @empty
+        <p class="text-gray-500">Semua stok aman 👍</p>
+    @endforelse
+</div>
+
+
 @endsection

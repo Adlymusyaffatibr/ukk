@@ -1,7 +1,7 @@
 @extends('layouts.petugas')
 
 @section('content')
-    <h1 class="text-3xl font-bold mb-6">Pembelian</h1>
+    <h1 class="text-3xl font-bold mb-6">Penjualan</h1>
 
     <div class="bg-white p-6 rounded-xl shadow">
 
@@ -9,11 +9,11 @@
 
             <div class="flex gap-2">
                 <a href="/petugas/pembelian-export" class="bg-blue-600 text-white px-4 py-2 rounded">
-                    Export Pembelian (.xlsx)
+                    Export Penjualan (.xlsx)
                 </a>
 
                 <a href="/petugas/pembelian/create" class="bg-blue-700 text-white px-4 py-2 rounded">
-                    Tambah Pembelian
+                    Tambah Penjualan
                 </a>
             </div>
 
