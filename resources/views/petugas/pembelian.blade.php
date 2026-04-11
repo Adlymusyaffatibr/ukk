@@ -7,19 +7,34 @@
 
         <div class="flex justify-between mb-4">
 
-            <div class="flex gap-2">
-                <a href="/petugas/pembelian-export" class="bg-blue-600 text-white px-4 py-2 rounded">
-                    Export Penjualan (.xlsx)
+            <form method="GET" class="flex gap-2 mb-4">
+
+                <input type="date" name="from" value="{{ request('from') }}" onchange="this.form.submit()"
+                    class="border rounded px-3 py-2 text-sm">
+
+                <input type="date" name="to" value="{{ request('to') }}" onchange="this.form.submit()"
+                    class="border rounded px-3 py-2 text-sm">
+
+                <a href="/petugas/pembelian" class="bg-gray-500 text-white px-4 py-2 rounded-lg text-sm">
+                    Reset
                 </a>
 
-                <a href="/petugas/pembelian/create" class="bg-blue-700 text-white px-4 py-2 rounded">
-                    Tambah Penjualan
-                </a>
-            </div>
+                <button type="submit" formaction="/petugas/pembelian-export"
+                    class="bg-green-600 text-white px-4 py-2 rounded">
+                    Export Excel
+                </button>
 
-            <form>
-                <input name="search" placeholder="Cari..." class="border p-2 rounded" value="{{ request('search') }}">
             </form>
+            <div class="flex items-center gap-2">
+                <a href="/petugas/pembelian/create" class="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded">
+                    Tambah Pembelian
+                </a>
+
+                <form>
+                    <input name="search" placeholder="Cari pelanggan..." class="border p-2 rounded"
+                        value="{{ request('search') }}">
+                </form>
+            </div>
         </div>
 
         <table class="w-full text-left">

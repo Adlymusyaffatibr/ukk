@@ -13,10 +13,28 @@ class PetugasPembelianController extends Controller
     public function index(Request $req)
     {
         $q = $req->search;
+        $from = $req->from;
+        $to   = $req->to;
 
-        $orders = Order::when($q, function ($query) use ($q) {
+        $query = Order::query();
+
+        if ($q) {
             $query->whereRaw('LOWER(customer_name) LIKE ?', ['%' . strtolower($q) . '%']);
-        })->latest()->paginate(10);
+        }
+
+        if ($from && $to) {
+
+            $start = \Carbon\Carbon::parse($from)->startOfDay();
+            $end   = \Carbon\Carbon::parse($to)->endOfDay();
+
+            $query->whereBetween('created_at', [$start, $end]);
+        } else {
+            $query->whereDate('created_at', now());
+        }
+
+        $orders = $query->orderBy('created_at', 'asc')
+            ->paginate(10)
+            ->withQueryString();
 
         return view('petugas.pembelian', compact('orders'));
     }
